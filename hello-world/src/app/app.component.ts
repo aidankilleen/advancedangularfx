@@ -7,9 +7,15 @@ import Message from './message.model';
     <h1>{{ title | titlecase }}</h1>
     
     <button (click)="onClick()">Change the title</button>
-    
-    <message [message]="message"></message>
-    
+
+    <message [(message)]="message"></message>
+
+    <!--
+    <message 
+      [message]="message"
+      (messageChange)="onMessageChange($event)">
+    </message>
+    -->
     <hr>
     
     {{ message | json }}
@@ -21,6 +27,12 @@ export class AppComponent implements OnInit {
 
   // message: Message = new Message("M1", "This is m1");
   message!: Message; // = undefined; //ew Message("M1", "This is m1");
+
+  /*
+  onMessageChange(updatedMessage: Message) {
+    this.message = updatedMessage;
+  }
+  */
 
   onClick() {
     this.title = "The Title Was Changed";
