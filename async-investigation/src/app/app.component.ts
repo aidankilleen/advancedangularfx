@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import Member from './member.model';
 import { MemberService } from './member.service';
+import { MemberHttpService } from './member-http.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { MemberService } from './member.service';
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let member of memberService.getAll()">
+        <tr *ngFor="let member of members">
           <td>{{ member.id }}</td>
           <td>{{ member.name }}</td>
           <td>{{ member.email }}</td>
@@ -27,14 +28,23 @@ import { MemberService } from './member.service';
       </tbody>
     </table>
 
+    <button (click)="onTestAjax()">Test Ajax Call</button>
     <hr>
-    {{ memberService.getAll() | json }}
+    {{ members | json }}
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title: string = 'async investigation';
+  members: Member[] = [];
 
-  constructor(public memberService: MemberService) {
+  constructor(public memberHttpService: MemberHttpService) {
+  }
+
+  onTestAjax() {
+    this.memberHttpService.getAll()
+      .subscribe((members: Member[]) => {
+        this.members = members;
+      });
   }
 }
