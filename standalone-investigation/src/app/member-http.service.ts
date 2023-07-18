@@ -11,7 +11,6 @@ export class MemberHttpService {
   url: string = "http://localhost:3000/members";
 
   constructor(private httpClient: HttpClient) { 
-
   }
 
   getAll(): Observable<Member[]> {
