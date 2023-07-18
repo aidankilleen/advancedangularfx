@@ -7,22 +7,36 @@ import Member from './member.model';
   providedIn: 'root'
 })
 export class MemberHttpService {
-
+  
   url = "http://localhost:3000/members";
   constructor(private httpClient: HttpClient) { 
-
+    
   }
-
+  
   public getAll(): Observable<Member[]> {
-
+    
     return this.httpClient.get<Member[]>(this.url);
-
+    
     //let obs:Observable<Member[]> = this.httpClient.get<Member[]>(this.url);
-
+    
     //obs.subscribe((data:Member[])=>{
+      
+      //  alert(JSON.stringify(data));
+      //})
+      
+    }
+    delete(id: number): Observable<void> {
+      return this.httpClient.delete<void>(`${this.url}/${id}`);
+    }
 
-    //  alert(JSON.stringify(data));
-    //})
+    add(member: Member): Observable<Member> {
 
-  }
+      return this.httpClient.post<Member>(this.url, member);
+
+    }
+    update(member: Member): Observable<Member> {
+
+      return this.httpClient.put<Member>(`${this.url}/${member.id}`, member);
+
+    }
 }
