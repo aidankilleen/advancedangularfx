@@ -16,13 +16,12 @@ import Member from './member.model';
                 name="name" #name="ngModel" 
                 class="form-control"
                 ngModel 
-                required 
-                minlength="3"
-                maxlength="25"/>
+                [forbiddenNames]="forbiddenNames"/>
 
         <div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert alert-danger">
           <div *ngIf="name.errors?.['required']">Name is Required</div>
           <div *ngIf="name.errors?.['minlength']">Minimum length is 3</div>
+          <div *ngIf="name.errors?.['forbiddenNames']">{{ name.errors?.['forbiddenNames'].value}}</div>
         </div>
 
 
@@ -51,6 +50,8 @@ import Member from './member.model';
 export class AppComponent {
   title = 'forms investigation';
   darkMode = false;
+
+  forbiddenNames: string[] = ['nike', 'adidas', 'superdry'];
 
   onSubmit(member: Member) {
     alert(JSON.stringify(member));
