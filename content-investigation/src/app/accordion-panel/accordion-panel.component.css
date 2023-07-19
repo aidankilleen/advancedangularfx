@@ -1,0 +1,13 @@
+div {
+    border: 1px solid black;
+}
+
+h2 {
+    background-color: lightgreen;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.selected {
+    background-color: lightblue;
+}

@@ -27,8 +27,4 @@ export class AccordionComponent implements AfterContentInit {
       })
     })
   }
-
-
-
-
 }

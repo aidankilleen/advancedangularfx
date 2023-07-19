@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'accordion-panel',
   template: `
     <div (click)="onClick()">
-      <h2>{{ title }}</h2>
+      <h2 [ngClass]="{'selected': selected}">{{ title }}</h2>
       <ng-content *ngIf="selected"></ng-content>
     </div>
   `,
