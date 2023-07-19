@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SummaryPipe } from './summary.pipe';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { CapitaliseDirective } from './capitalise.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummaryPipe
+    SummaryPipe,
+    HighlightDirective,
+    CapitaliseDirective
   ],
   imports: [
     BrowserModule, 

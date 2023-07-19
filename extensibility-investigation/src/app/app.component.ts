@@ -5,6 +5,21 @@ import { Component } from '@angular/core';
   template: `
     <h1>{{ title | titlecase }}</h1>
 
+    <select [(ngModel)]="capitalise">
+      <option type="radio" value="upper">Upper</option>
+      <option type="radio" value="lower">Lower</option>
+      <option type="radio" value="title">Title</option>
+    </select>
+
+    <input [capitalise] = "capitalise"/>
+
+    <hr>
+    <div class="highlight">
+      This is a div 
+    </div>
+
+    <h1 class="highlight">Highlighted?</h1>
+
     {{ price | currency:'EUR'  }} <br>
 
     {{ today | date:'longDate' | uppercase }} <br>
@@ -23,6 +38,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  capitalise="upper";
+
   title = 'extensibility investigation';
 
   length = 50;
