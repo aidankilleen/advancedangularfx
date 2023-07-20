@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   template: `
     <h1>{{ title | titlecase }}</h1>
     <navigation></navigation>
-    <hr>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']
