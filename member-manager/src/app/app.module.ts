@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +39,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     FormsModule, 
     ButtonModule, 
     MenubarModule, 
-    TableModule
+    TableModule, 
+    CheckboxModule, 
+    ToastModule, 
+    ConfirmDialogModule
   ],
 
   providers: [],

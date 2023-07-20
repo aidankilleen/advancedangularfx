@@ -3,25 +3,19 @@
     {
       "id": 1,
       "name": "Alice",
-      "email": "alice@gmail.com",
-      "active": false
+      "email": "alicia@gmail.com",
+      "active": true
     },
     {
       "id": 2,
-      "name": "Bob",
+      "name": "Bobby",
       "email": "bob@gmail.com",
-      "active": true
+      "active": false
     },
     {
       "id": 3,
       "name": "Carol",
       "email": "carol@gmail.com",
-      "active": true
-    },
-    {
-      "id": 4,
-      "name": "Dan",
-      "email": "dan@gmail.com",
       "active": true
     }
   ]
