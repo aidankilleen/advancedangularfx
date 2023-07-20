@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Alice",
       "email": "alicia@gmail.com",
-      "active": true
+      "active": false
     },
     {
       "id": 2,
@@ -16,6 +16,30 @@
       "id": 3,
       "name": "Carol",
       "email": "carol@gmail.com",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Dan",
+      "email": "dan@gmail.com",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "email": "eve@gmail.com",
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "Fred",
+      "email": "fred@gmail.com",
+      "active": false
+    },
+    {
+      "id": 7,
+      "name": "Ger",
+      "email": "ger@gmail.com",
       "active": true
     }
   ]

@@ -10,6 +10,8 @@ import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +44,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     TableModule, 
     CheckboxModule, 
     ToastModule, 
-    ConfirmDialogModule
+    ConfirmDialogModule, 
+    DialogModule,
+    InputTextModule
   ],
 
   providers: [],

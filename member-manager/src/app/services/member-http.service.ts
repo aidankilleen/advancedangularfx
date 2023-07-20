@@ -25,8 +25,11 @@ export class MemberHttpService {
   update(member:Member): Observable<Member> {
     return this.httpClient.put<Member>(`${ this.url }/${ member.id }`, member);
   }
-  
+
   delete(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${ this.url }/${ id }`);
+  }
+  add(member: Member): Observable<Member> {
+    return this.httpClient.post<Member>(this.url, member);
   }
 }

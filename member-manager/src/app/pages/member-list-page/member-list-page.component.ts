@@ -17,6 +17,9 @@ export class MemberListPageComponent implements OnInit {
 
   members: Member[] = [];
   clonedMembers: { [s: string]: Member } = {};
+  showDialog = false;
+
+  editingMember: Member = new Member();
 
   constructor(public memberHttpService: MemberHttpService, 
               private messageService: MessageService, 
@@ -64,5 +67,14 @@ export class MemberListPageComponent implements OnInit {
       }, 
       reject: ()=>{}
     })
+  }
+  onSubmit(member: Member) {
+
+    this.memberHttpService.add(member)
+      .subscribe(addedMember => {
+        this.members.push(addedMember);
+        this.showDialog = false;
+        this.messageService.add({severity: 'success', summary:"Added", detail: `Added member ${addedMember.id}`})
+      })
   }
 }
