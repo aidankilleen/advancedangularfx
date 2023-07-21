@@ -12,6 +12,7 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { MemberListPageComponent } from './pages/member-list-page/member-list-page.component';
 import { MemberDetailPageComponent } from './pages/member-detail-page/member-detail-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ContactPageComponent,
     MemberListPageComponent,
     MemberDetailPageComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ToastModule, 
     ConfirmDialogModule, 
     DialogModule,
-    InputTextModule
+    InputTextModule, 
+    PasswordModule
   ],
 
   providers: [],

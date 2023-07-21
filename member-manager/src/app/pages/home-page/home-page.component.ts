@@ -25,7 +25,7 @@ export class HomePageComponent implements OnInit {
       .subscribe(loggedIn => this.loggedIn = loggedIn);
   }
   onLogin() {
-    this.authService.login();
+    this.authService.login({email:"aidan@gmail.com", password:"password"});
   }
   onLogout() {
     this.authService.logout();

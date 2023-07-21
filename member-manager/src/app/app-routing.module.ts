@@ -5,14 +5,17 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { MemberListPageComponent } from './pages/member-list-page/member-list-page.component';
 import { MemberDetailPageComponent } from './pages/member-detail-page/member-detail-page.component';
+import { isAuthenticatedGuard } from './is-authenticated.guard';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
-  { path: 'contact', component: ContactPageComponent },
-  { path: 'memberlist', component: MemberListPageComponent },
-  { path: 'memberlist/:id', component: MemberDetailPageComponent }
+  { path: 'contact', component: ContactPageComponent,  canActivate:[isAuthenticatedGuard] },
+  { path: 'memberlist', component: MemberListPageComponent},
+  { path: 'memberlist/:id', component: MemberDetailPageComponent }, 
+  { path: 'login', component: LoginPageComponent }
 ];
 
 @NgModule({
