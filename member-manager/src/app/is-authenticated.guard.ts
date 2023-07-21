@@ -11,6 +11,7 @@ export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
   let loggedIn = false;
   console.log('isAuthenticatedGuard', route, state);
 
+  // synchronously read the current value of the observable.
   authService.isLoggedIn$.pipe(
     tap((isLoggedIn: boolean) => loggedIn = isLoggedIn),
   ).subscribe();

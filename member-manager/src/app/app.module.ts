@@ -23,6 +23,7 @@ import { MemberListPageComponent } from './pages/member-list-page/member-list-pa
 import { MemberDetailPageComponent } from './pages/member-detail-page/member-detail-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthInterceptorProvider } from './auth.interceptor';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     PasswordModule
   ],
 
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

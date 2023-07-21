@@ -13,6 +13,8 @@ export class AuthService {
 
   public isLoggedIn$ = this._isLoggedIn$.asObservable();
 
+  public token: string = "";
+
   constructor(private apiService: ApiService) { 
     this._isLoggedIn$.next(false);
   }
@@ -23,6 +25,8 @@ export class AuthService {
       .subscribe((apiToken: ApiToken) => {
 
         if (apiToken.token) {
+          this.token = apiToken.token;
+          console.log(apiToken.token);
           this._isLoggedIn$.next(true);
         }
       });
